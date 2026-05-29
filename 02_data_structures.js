@@ -40,3 +40,10 @@ function countCharacter(text, character) {
 }
 
 console.log(countCharacter(frequencyText, "o")); // 2
+
+// 4. Map
+const map = new Map();
+map.set("a", 1);
+map.set("b", 2);
+console.log(map.get("a")); // 1
+console.log(map.has("b")); // true
