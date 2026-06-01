@@ -56,11 +56,11 @@ set.add(3);
 console.log(set); // Set { 1, 2, 3 }
 
 // 4.2 Detect duplicates
-function hasDuplicate(arr){
+function hasDuplicate(arr) {
   const seen = new Set();
 
-  for(const num of arr){
-    if(seen.has(num)){
+  for (const num of arr) {
+    if (seen.has(num)) {
       return true;
     }
     seen.add(num);
@@ -68,3 +68,36 @@ function hasDuplicate(arr){
   return false;
 }
 console.log(hasDuplicate([1, 2, 3, 2])); // true
+
+// 5. Slack: Last in, first out
+const stack = [];
+stack.push(1);
+stack.push(2);
+stack.push(3);
+console.log(stack.pop()); // 3
+console.log(stack.pop()); // 2
+
+// 5.2 Validate parentheses
+function isValidParentheses(s) {
+  const stack = [];
+  const pairs = {
+    ")": "(",
+    "}": "{",
+    "]": "[",
+  };
+
+  for (const char of s) {
+    if (char === "(" || char === "[" || char === "{") {
+      stack.push(char);
+    } else {
+      const last = stack.pop();
+      if (last !== pairs[char]) {
+        return false;
+      }
+    }
+  }
+  return stack.length === 0;
+}
+
+console.log(isValidParentheses("({[]})")); // true
+console.log(isValidParentheses("({[})")); // false
