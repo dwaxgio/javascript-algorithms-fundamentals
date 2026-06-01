@@ -54,3 +54,17 @@ set.add(1);
 set.add(2);
 set.add(3);
 console.log(set); // Set { 1, 2, 3 }
+
+// 4.2 Detect duplicates
+function hasDuplicate(arr){
+  const seen = new Set();
+
+  for(const num of arr){
+    if(seen.has(num)){
+      return true;
+    }
+    seen.add(num);
+  }
+  return false;
+}
+console.log(hasDuplicate([1, 2, 3, 2])); // true
