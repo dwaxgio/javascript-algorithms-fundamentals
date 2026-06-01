@@ -47,3 +47,10 @@ map.set("a", 1);
 map.set("b", 2);
 console.log(map.get("a")); // 1
 console.log(map.has("b")); // true
+
+// 5. Set: Saves unique values
+const set = new Set();
+set.add(1);
+set.add(2);
+set.add(3);
+console.log(set); // Set { 1, 2, 3 }
