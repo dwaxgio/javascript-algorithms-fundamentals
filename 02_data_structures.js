@@ -101,3 +101,15 @@ function isValidParentheses(s) {
 
 console.log(isValidParentheses("({[]})")); // true
 console.log(isValidParentheses("({[})")); // false
+
+// 6. Queue: First in, first out
+const queue = [];
+queue.push("A");
+queue.push("B");
+queue.push("C");
+console.log(queue); // [ 'A', 'B', 'C' ]
+console.log(queue.shift()); // A
+console.log(queue.shift()); // B
+console.log(queue.shift()); // C
+console.log(queue.shift()); // undefined
+console.log(queue); // []
