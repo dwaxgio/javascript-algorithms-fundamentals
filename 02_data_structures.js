@@ -113,3 +113,29 @@ console.log(queue.shift()); // B
 console.log(queue.shift()); // C
 console.log(queue.shift()); // undefined
 console.log(queue); // []
+
+// 6.2 Alternative to shift
+class Queue {
+  constructor() {
+    this.items = [];
+    this.front = 0;
+  }
+
+  enqueue(value) {
+    this.items.push(value);
+  }
+
+  dequeue() {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    const value = this.items[this.front];
+    this.front++;
+    return value;
+  }
+
+  isEmtpy() {
+    return this.front >= this.items.length;
+  }
+}
