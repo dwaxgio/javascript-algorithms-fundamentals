@@ -28,3 +28,28 @@ function areAnagrams(s1, s2) {
 
 console.log(areAnagrams("listen", "silent")); // true
 console.log(areAnagrams("hello", "world")); // false
+
+// 2. Two Pointers: Use two pointers to traverse data structures
+// 2.1 Sum of Two Numbers: Find if two numbers sum to a target
+function twoSumSorted(arr, target) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left < right) {
+    const sum = arr[left] + arr[right];
+
+    if (sum === target) return true;
+
+    if (sum < target) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+
+  return false;
+}
+console.log("2");
+console.log(twoSumSorted([1, 2, 3, 4, 6], 6)); // true (2 + 4 = 6)
+// Time: O(n) - Linear time complexity
+// Space: O(1) - Constant space complexity
