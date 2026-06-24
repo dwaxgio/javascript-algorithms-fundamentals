@@ -53,3 +53,26 @@ console.log("2");
 console.log(twoSumSorted([1, 2, 3, 4, 6], 6)); // true (2 + 4 = 6)
 // Time: O(n) - Linear time complexity
 // Space: O(1) - Constant space complexity
+
+// 3. Sliding Window: Optimize subarray problems
+function maxSubarraySum(arr, k) {
+  let windowSum = 0;
+  let maxSum = 0;
+
+  for (let i = 0; i < k; i++) {
+    windowSum += arr[i];
+  }
+
+  maxSum = windowSum;
+
+  for (let right = k; right < arr.length; right++) {
+    windowSum += arr[right];
+    windowSum -= arr[right - k];
+
+    maxSum = Math.max(maxSum, windowSum);
+  }
+
+  return maxSum;
+}
+
+console.log(maxSubarraySum([2, 1, 5, 1, 3, 2], 3)); // 9
